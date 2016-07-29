@@ -1,0 +1,27 @@
+source:
+https://www.sorendam.com/take-control-of-your-console-in-windows-with-babun-oh-my-zsh-and-powerline-fonts/
+
+
+To remove the user name (like on the image above) 
+	set DEFAULT_USER  in  ~/.zshrc . 
+	The line is probably not there so you should just add it like this  DEFAULT_USER=yourusername
+
+
+
+Set Babun home directory to Windows user home directory
+
+
+You might want to set the home directory to your current windows user. This can be done via these simple steps.
+
+Close Babun
+Create an environment variable for HOME = C:/Users/my_account_name
+Press the windows key and type env
+Open ‘Edit envirnoment variables for your account’
+Create a new variable with HOME as variable name and C:/Users/my_account_name as variable value
+Open Babun and run  babun install
+Restart Babun
+If you experience some issues with zsh after this try running these commands
+
+
+compaudit | xargs chmod g-w
+cp ~/.zcompdump{,-$HOSTNAME-$ZSH_VERSION}
