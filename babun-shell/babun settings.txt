@@ -6,7 +6,30 @@ To remove the user name (like on the image above)
 	set DEFAULT_USER  in  ~/.zshrc . 
 	The line is probably not there so you should just add it like this  DEFAULT_USER=yourusername
 
+----------------------------------------------------------------
 
+Integrating with Windows Home #289
+
+mkpasswd -l -p "$(cygpath -H)" > /etc/passwd
+
+
+Add HOME to windows environment variables:
+Windows Key
+Type (in search): env
+Select Edit environment variables for your account
+. Select New
+Name: HOME
+Value: C:\Users\nfarrar
+Launch babun
+Type: babun install
+Restart babun
+
+
+
+
+
+
+--------------------------------------------------------------------
 
 Set Babun home directory to Windows user home directory
 
@@ -25,3 +48,8 @@ If you experience some issues with zsh after this try running these commands
 
 compaudit | xargs chmod g-w
 cp ~/.zcompdump{,-$HOSTNAME-$ZSH_VERSION}
+
+
+
+
+--------------------------------------------
